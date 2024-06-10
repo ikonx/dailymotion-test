@@ -3,7 +3,11 @@ import React from "react";
 
 type Mode = "dark" | "light";
 
-const DarkLightSwitch = () => {
+type Props = {
+  className?: string;
+};
+
+const DarkLightSwitch = ({ className }: Props) => {
   const [mode, setMode] = React.useState<Mode>("dark");
 
   const onClick = (mode: Mode) => () => {
@@ -31,15 +35,18 @@ const DarkLightSwitch = () => {
   }, [mode]);
 
   return (
-    <div className="flex items-center px-2 py-2 rounded-full border-solid border-2 border-[--foreground]">
-      <p>{mode}</p>
+    <div
+      className={`flex items-center px-2 py-2 rounded-full border-solid border-2 border-[--foreground] ${
+        className ?? ""
+      }`}
+    >
       <button
         className={`w-6 h-6 rounded-full ${
           mode === "light" && "bg-[--foreground] text-[--background]"
         }`}
         onClick={onClick("light")}
       >
-        l
+        🌝
       </button>
       <button
         className={`w-6 h-6 rounded-full ${
@@ -47,7 +54,7 @@ const DarkLightSwitch = () => {
         }`}
         onClick={onClick("dark")}
       >
-        d
+        🌚
       </button>
     </div>
   );
