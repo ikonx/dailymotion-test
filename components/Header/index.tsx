@@ -1,11 +1,9 @@
 import DarkLightSwitch from "@UI/DarkLightSwitch";
 
-type Props = {};
-
-const Header = (props: Props) => {
+const Header = () => {
   return (
-    <div className="absolute">
-      <DarkLightSwitch />
+    <div className="relative">
+      <DarkLightSwitch className="absolute top-6 right-6" />
     </div>
   );
 };
