@@ -39,14 +39,16 @@ const Channel = ({ channel }: Props) => {
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
         {data?.map((page) =>
-          page.list.map((video) => (
-            <Card
-              key={video.id}
-              title={video.title}
-              thumbnail={video.thumbnail_url}
-              onClick={onSelectedVideo(video.id)}
-            />
-          ))
+          page.list.map(
+            (video: { id: string; title: string; thumbnail_url: string }) => (
+              <Card
+                key={video.id}
+                title={video.title}
+                thumbnail={video.thumbnail_url}
+                onClick={onSelectedVideo(video.id)}
+              />
+            )
+          )
         )}
       </div>
       <button

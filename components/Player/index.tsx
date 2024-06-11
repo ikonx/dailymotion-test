@@ -51,19 +51,6 @@ const Player = ({ playerId, videoId, onVideoEnd }: Props) => {
         });
       }
     }
-
-    console.log(window.dailymotion);
-
-    // return () => {
-    //   if (window.dailymotion.getPlayer) {
-    //     window.dailymotion
-    //       .getPlayer("dailymotion-player")
-    //       .then((player: any) => {
-    //         player.off(window.dailymotion.events.PLAYER_END);
-    //         player.destroy();
-    //       });
-    //   }
-    // };
   }, []);
 
   const getPlayerScriptSrc = () => {

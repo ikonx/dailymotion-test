@@ -7,8 +7,8 @@ import ChannelPage from "@Pages/Channel";
 export default function App() {
   const searchParams = useSearchParams();
 
-  const gotChannel = searchParams.has("channel");
-  const channel = searchParams.get("channel") ?? "";
+  const gotChannel = searchParams?.has("channel");
+  const channel = searchParams?.get("channel") ?? "";
 
   return (
     <main className="h-full w-full flex-1">
