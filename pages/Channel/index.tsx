@@ -57,15 +57,17 @@ const Channel = ({ channel }: Props) => {
         <h1 className="text-4xl font-bold capitalize">{channel}</h1>
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
-        {gotVideos ? renderVideos : <p>No videos found</p>}
+        {gotVideos && renderVideos}
+        {isLoading && <p>Loading...</p>}
+        {!gotVideos && !isLoading && <p>No videos found</p>}
       </div>
-      {gotVideos && (
+      {gotVideos && !isLoading && (
         <button
           className="px-6 py-3 text-xl"
           onClick={loadMore}
           disabled={isLoading}
         >
-          {isLoading ? "Loading..." : "Load More"}
+          {isLoading ? "Loading more..." : "Load More"}
         </button>
       )}
     </div>

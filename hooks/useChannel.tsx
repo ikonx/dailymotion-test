@@ -1,9 +1,10 @@
 "use client";
+import { API_URL } from "@Utils/constants";
 import fetcher from "@Utils/fetcher";
 import useSWRInfinite from "swr/infinite";
 
 const getKey = (channelId: string) => (pageIndex: number) => {
-  return `https://api.dailymotion.com/user/${channelId}/videos?fields=id,title,thumbnail_url&limit=40&page=${
+  return `${API_URL}/user/${channelId}/videos?fields=id,title,thumbnail_url&limit=40&page=${
     pageIndex + 1
   }`;
 };
