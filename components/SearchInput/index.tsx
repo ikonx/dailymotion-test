@@ -10,7 +10,6 @@ const SearchInput = (props: Props) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(search);
     router.push(`?channel=${search}`);
   };
 
