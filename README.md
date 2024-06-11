@@ -4,6 +4,14 @@ Here is quick Framer preview of the project:
 
 https://static-travelers-187218.framer.app/
 
+#
+
+Clone the project and create .env.local file in the root directory. Add the following line to the file:
+
+```bash
+NEXT_PUBLIC_API_URL=apiurl
+```
+
 Run this command to start the project in development mode:
 
 ```bash
