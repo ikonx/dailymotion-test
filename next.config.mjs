@@ -7,6 +7,9 @@ const nextConfig = {
       },
     ],
   },
+  experimental: {
+    missingSuspenseWithCSRBailout: false, // to handle Suspense of useSearchParams hook
+  },
 };
 
 export default nextConfig;

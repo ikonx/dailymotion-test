@@ -8,7 +8,10 @@ type Props = {
 };
 
 const DarkLightSwitch = ({ className }: Props) => {
-  const defaultMode: Mode = (localStorage.getItem("mode") as Mode) ?? "dark";
+  const defaultMode: Mode =
+    typeof localStorage !== "undefined"
+      ? (localStorage.getItem("mode") as Mode)
+      : "dark";
   const [mode, setMode] = React.useState<Mode>(defaultMode);
 
   const onClick = (mode: Mode) => () => {
