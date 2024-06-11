@@ -13,11 +13,11 @@ const Card = ({ title, thumbnail, ...rest }: Props) => {
       {...rest}
     >
       <Image
-        className="absolute inset-0"
+        className="absolute inset-0 object-cover"
         src={thumbnail}
         alt={title}
         fill
-        objectFit="cover"
+        sizes="100%"
       />
       <p className="absolute inset-0 p-2 text-sm w-full h-full overflow-hidden text-ellipsis bg-gradientThumbnail group-hover:bg-black/70 text-white">
         {title}

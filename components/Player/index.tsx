@@ -51,6 +51,7 @@ const Player = ({ playerId, videoId, onVideoEnd }: Props) => {
         });
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getPlayerScriptSrc = () => {

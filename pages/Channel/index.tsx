@@ -3,7 +3,7 @@ import useChannel from "@Hooks/useChannel";
 import Card from "@UI/Card";
 import Overlay from "@UI/Overlay";
 import Player from "@UI/Player";
-import React from "react";
+import React, { useMemo } from "react";
 
 type Props = {
   channel: string;
@@ -25,6 +25,23 @@ const Channel = ({ channel }: Props) => {
     setSelectedVideo(null);
   };
 
+  const renderVideos = useMemo(
+    () =>
+      data?.map((page) =>
+        page.list?.map(
+          (video: { id: string; title: string; thumbnail_url: string }) => (
+            <Card
+              key={video.id}
+              title={video.title}
+              thumbnail={video.thumbnail_url}
+              onClick={onSelectedVideo(video.id)}
+            />
+          )
+        )
+      ),
+    [data]
+  );
+
   return (
     <div className="px-4 flex flex-col">
       {isOverlayOpen && (
@@ -40,22 +57,7 @@ const Channel = ({ channel }: Props) => {
         <h1 className="text-4xl font-bold capitalize">{channel}</h1>
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
-        {gotVideos ? (
-          data?.map((page) =>
-            page.list.map(
-              (video: { id: string; title: string; thumbnail_url: string }) => (
-                <Card
-                  key={video.id}
-                  title={video.title}
-                  thumbnail={video.thumbnail_url}
-                  onClick={onSelectedVideo(video.id)}
-                />
-              )
-            )
-          )
-        ) : (
-          <p>No videos found</p>
-        )}
+        {gotVideos ? renderVideos : <p>No videos found</p>}
       </div>
       {gotVideos && (
         <button
