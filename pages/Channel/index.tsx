@@ -34,7 +34,7 @@ const Channel = ({ channel }: Props) => {
           />
         </Overlay>
       )}
-      <div className="h-[150px] w-full content-center sticky top-0 z-10 bg-gradient-to-b from-[#000000] to-[#00000000]">
+      <div className="h-[150px] w-full content-center sticky top-0 z-10 bg-[--background]">
         <h1 className="text-4xl font-bold capitalize">{channel}</h1>
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
