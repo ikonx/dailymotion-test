@@ -1,4 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        hostname: "*.dmcdn.net",
+      },
+    ],
+  },
+};
 
 export default nextConfig;

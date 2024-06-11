@@ -6,7 +6,11 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {},
+  theme: {
+    backgroundImage: {
+      gradientThumbnail: "linear-gradient(180deg, #111111 27%, rgba(0, 0, 0, 0.27) 100%);"
+    }
+  },
   plugins: [],
 };
 export default config;
