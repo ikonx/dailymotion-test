@@ -6,11 +6,14 @@ https://static-travelers-187218.framer.app/
 
 #
 
-Clone the project and create .env.local file in the root directory. Add the following line to the file:
+Clone the project and create .env.local file in the root directory. Add the following lines to the file:
 
 ```bash
 NEXT_PUBLIC_API_URL=apiurl
+NEXT_PUBLIC_PLAYER_ID=playerid
 ```
+
+You can use my player id key... `xu25c`
 
 Run this command to start the project in development mode:
 

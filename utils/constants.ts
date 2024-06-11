@@ -1,1 +1,2 @@
 export const API_URL = process.env.NEXT_PUBLIC_API_URL;
+export const PLAYER_ID = process.env.NEXT_PUBLIC_PLAYER_ID as string; //forced cast to string but usually i use a Zod schema to validate the env vars

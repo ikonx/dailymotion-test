@@ -3,6 +3,7 @@ import useChannel from "@Hooks/useChannel";
 import Card from "@UI/Card";
 import Overlay from "@UI/Overlay";
 import Player from "@UI/Player";
+import { PLAYER_ID } from "@Utils/constants";
 import React, { useMemo } from "react";
 
 type Props = {
@@ -48,7 +49,7 @@ const Channel = ({ channel }: Props) => {
         <Overlay onClose={resetSelectedVideo}>
           <Player
             videoId={selectedVideo}
-            playerId="xu25c"
+            playerId={PLAYER_ID}
             onVideoEnd={resetSelectedVideo}
           />
         </Overlay>
