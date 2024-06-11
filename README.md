@@ -4,6 +4,10 @@ Here is quick Framer preview of the project:
 
 https://static-travelers-187218.framer.app/
 
+And Vercel deployment:
+
+https://dailymotion-test.vercel.app/
+
 #
 
 Clone the project and create .env.local file in the root directory. Add the following lines to the file:
